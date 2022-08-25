@@ -1,0 +1,13 @@
+version: "2"
+services:
+  prometheus:
+    container_name: prometheus
+    network_mode: bridge
+    build:
+      context: .
+    ports:
+      - '9090:9090'
+    volumes:
+      - data:/prometheus
+volumes:
+  data:

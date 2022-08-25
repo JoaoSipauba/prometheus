@@ -30,3 +30,10 @@ scrape_configs:
     - targets: ['172.21.0.2:8761']
       labels:
         group: 'production' 
+- job_name: uniselos-api
+  metrics_path: /uniselos-api/metrics
+  scrape_interval: 10s
+  static_configs:
+    - targets: ['docker.test.ceuma.edu.br:3075']
+      labels:
+        group: 'production' 
